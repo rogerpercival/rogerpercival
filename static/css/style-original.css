@@ -1,0 +1,361 @@
+/* Overide bootstrao table settings 
+*/
+tr {
+   line-height: 25px;
+   min-height: 25px;
+   height: 25px;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #ddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #ddd;
+}
+.table .table {
+  background-color: #fff;
+}
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+.table-bordered {
+  border: 1px solid #ddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #ddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+.table-condensed > tfoot > tr > td {
+  padding: 2px;
+}
+
+.add-button {
+  background-image: url(/static/icons/add.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 32px;
+  width: 32px;
+  border: none
+}
+
+.add-button span {
+  display: none;
+}
+
+
+.edit-button {
+  background-image: url(/static/icons/edit.png);
+  background-repeat: no-repeat;
+  background-position: 10% 50%;
+  height: 20px;
+  width: 20px;
+  border: none
+}
+
+.edit-button span {
+  display: none;
+}
+
+.delete-button {
+  background-image: url(/static/icons/delete.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 20px;
+  width: 20px;
+  border: none
+}
+
+.delete-button span {
+  display: none;
+}
+
+.action-width {
+	width:24px
+}
+
+.function_title{
+	color:blue;
+	font-size: medium;
+	text-align: center
+}
+
+input[type="number"] {
+    width: 80px;
+    padding:2px;
+  	 margin:5px 0 0 0
+}
+
+input[type="text"] {
+    width: 170px;
+    padding:2px;
+  	 margin: 5px 0 0 0
+}
+
+.flashes {
+    color: blue;
+    text-align: center
+}
+
+.select-label {
+    width: 150px;
+    padding:2px;
+  	 margin: 8px 0 2px 0
+}
+
+.submit-btn {
+  	 margin: 5px 0 0 0
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+body{
+	background: #f0f0f0;
+}
+
+.help{
+	max-width: 450px;
+	width: 90%;
+	background: #f0f0f0;
+	padding: 8px;
+	margin: 1px auto;
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.35);
+	border-radius: 15px;
+	border: 2px solid #305A72;
+}
+
+.help-title {
+	color: blueviolet;
+	padding-bottom : 8px;
+}
+
+.help-line {
+	color: #444444;
+	padding: 6px;
+}
+
+.help-note {
+	color: #dd0000;
+	padding: 6px;
+}
+
+.form-style-9{
+	max-width: 450px;
+	background: #FAFAFA;
+	padding: 14px;
+	margin: 1px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #305A72;
+}
+.form-style-9 ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.form-style-9 ul li{
+	display: block;
+	margin-bottom: 10px;
+	min-height: 35px;
+}
+.form-style-9 ul li  .field-style{
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	padding: 1px;
+	outline: none;
+	border: 1px solid #B0CFE0;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+
+}.form-style-9 ul li  .field-style:focus{
+	box-shadow: 0 0 5px #B0CFE0;
+	border:1px solid #B0CFE0;
+}
+.form-style-9 ul li .field-split{
+	width: 49%;
+}
+.form-style-9 ul li .field-full{
+	width: 100%;
+}
+.form-style-9 ul li input.align-left{
+	float:left;
+}
+.form-style-9 ul li input.align-right{
+	float:right;
+}
+.form-style-9 ul li textarea{
+	width: 100%;
+	height: 100px;
+}
+.form-style-9 ul li input[type="button"], 
+.form-style-9 ul li input[type="submit"] {
+	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	box-shadow: inset 0px 1px 0px 0px #3985B1;
+	background-color: #216288;
+	border: 1px solid #17445E;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	padding: 8px 18px;
+	text-decoration: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+.form-style-9 ul li input[type="button"]:hover, 
+.form-style-9 ul li input[type="submit"]:hover {
+	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
+}
+
+.index-title {
+	width: 100%;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+	font-size: 35px;
+   text-shadow: 1px 1px;
+   color: blue;
+}
+
+.index-line1 {
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	margin-top : 24px;
+	margin-bottom : 5px;
+	font-size: 20px;
+   color: #555555;
+}
+.index-credit {
+	width: 100%;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+	margin-top : 5px;
+	margin-bottom : 2px;
+	font-size: 20px;
+   color: #555555;
+}
+
+.index-ul li{
+	margin-top : 5px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	color: #1111FF;
+}
+
+.picture {
+	width: 80%;
+	margin: auto;
+	display: block;		
+}
+
+.picture-1 {
+	width: 8%;
+	margin: auto;
+	display: block;		
+}
+
+.picture-2 {
+	width: 60%;
+	margin: auto;
+	display: block;		
+}
+
+.picture-3 {
+	width: 100%;
+	margin: auto;
+	display: block;		
+}
+
+.video {
+	width: 100%;
+  	margin: auto;
+  	display: block;	
+}
+
+
+.blankline {
+	margin-top : 20px;
+	margin-bottom : 20px;
+}
+
+.logo {
+	width: 36px;
+	height: 36px; 
+}
+
+.username {
+  color : red;
+}
+
+
+
