@@ -1,0 +1,211 @@
+centre,date,course,duration,trainer,company,student
+South Africa,2018-01-15,Course_1,5,Trainer_1,Company_13,Student_100
+UK,2018-05-29,Course_1,5,Trainer_1,Company_13,Student_112
+UK,2018-05-29,Course_1,5,Trainer_1,Company_13,Student_117
+UK,2018-05-29,Course_1,5,Trainer_1,Company_13,Student_198
+South Africa,2018-01-15,Course_1,5,Trainer_1,Company_13,Student_52
+Kenya,2018-03-19,Course_2,3,Trainer_2,Company_1,Student_1
+Kenya,2018-03-19,Course_2,3,Trainer_2,Company_1,Student_2
+Kenya,2018-03-19,Course_2,3,Trainer_2,Company_1,Student_3
+Kenya,2018-03-19,Course_2,3,Trainer_2,Company_1,Student_4
+In Country,2018-11-22,Course_4,2,Trainer_5,Company_7,Student_5
+In Country,2018-11-22,Course_4,2,Trainer_5,Company_7,Student_6
+In Country,2018-11-19,Course_7,3,Trainer_5,Company_7,Student_7
+In Country,2018-11-19,Course_7,3,Trainer_5,Company_7,Student_8
+In Country,2018-12-03,Course_1,5,Trainer_3,Company_7,Student_9
+In Country,2018-12-03,Course_5,3,Trainer_3,Company_7,Student_10
+In Country,2018-12-03,Course_5,3,Trainer_3,Company_7,Student_11
+In Country,2018-12-03,Course_5,3,Trainer_3,Company_7,Student_12
+In Country,2018-12-03,Course_5,3,Trainer_3,Company_7,Student_13
+In Country,2018-12-03,Course_5,3,Trainer_3,Company_7,Student_14
+In Country,2018-12-03,Course_5,3,Trainer_3,Company_7,Student_15
+In Country,2018-12-03,Course_1,5,Trainer_3,Company_7,Student_16
+In Country,2018-12-03,Course_1,5,Trainer_3,Company_7,Student_17
+In Country,2018-12-03,Course_1,5,Trainer_3,Company_7,Student_18
+In Country,2018-11-22,Course_4,2,Trainer_5,Company_7,Student_19
+In Country,2018-12-03,Course_1,5,Trainer_3,Company_7,Student_20
+In Country,2018-12-03,Course_1,5,Trainer_3,Company_7,Student_21
+In Country,2018-11-22,Course_4,2,Trainer_5,Company_7,Student_22
+In Country,2018-11-22,Course_4,2,Trainer_5,Company_7,Student_23
+In Country,2018-11-19,Course_7,3,Trainer_5,Company_7,Student_24
+In Country,2018-11-19,Course_7,3,Trainer_5,Company_7,Student_25
+In Country,2018-10-08,Custom,5,Trainer_4,Company_7,Student_26
+In Country,2018-11-22,Course_4,2,Trainer_5,Company_7,Student_27
+In Country,2018-11-19,Course_7,3,Trainer_5,Company_7,Student_28
+In Country,2018-11-19,Course_7,3,Trainer_5,Company_7,Student_29
+In Country,2018-10-15,Custom,5,Trainer_4,Company_7,Student_30
+In Country,2018-10-15,Custom,5,Trainer_4,Company_7,Student_31
+In Country,2018-10-15,Custom,5,Trainer_4,Company_7,Student_32
+In Country,2018-10-08,Custom,5,Trainer_4,Company_7,Student_33
+In Country,2018-10-08,Custom,5,Trainer_4,Company_7,Student_34
+In Country,2018-10-08,Custom,5,Trainer_4,Company_7,Student_35
+In Country,2018-10-15,Custom,5,Trainer_4,Company_7,Student_36
+Kenya,2018-04-12,Custom,2,Trainer_2,Company_4,Student_37
+Kenya,2018-04-12,Custom,2,Trainer_2,Company_4,Student_38
+Kenya,2018-04-12,Custom,2,Trainer_2,Company_4,Student_39
+Kenya,2018-04-12,Custom,2,Trainer_2,Company_4,Student_40
+In Country,2018-10-29,Custom,5,Trainer_4,Company_7,Student_41
+In Country,2018-10-29,Custom,5,Trainer_4,Company_7,Student_42
+In Country,2018-10-29,Custom,5,Trainer_4,Company_7,Student_43
+In Country,2018-10-29,Custom,5,Trainer_4,Company_7,Student_44
+UK,2018-09-03,Course_1,5,Trainer_1,Company_13,Student_45
+UK,2018-09-03,Course_1,5,Trainer_1,Company_13,Student_46
+UK,2018-09-03,Course_1,5,Trainer_1,Company_13,Student_47
+UK,2018-09-03,Course_1,5,Trainer_1,Company_13,Student_48
+UK,2018-09-03,Course_1,5,Trainer_1,Company_13,Student_49
+UK,2018-09-03,Course_1,5,Trainer_1,Company_14,Student_50
+UK,2018-09-03,Course_1,5,Trainer_1,Company_14,Student_51
+UK,2018-09-03,Course_1,5,Trainer_1,Company_14,Student_52
+Nigeria,2018-12-05,Course_2,3,Trainer_4,Company_7,Student_53
+Nigeria,2018-12-05,Course_2,3,Trainer_4,Company_7,Student_54
+Nigeria,2018-12-05,Course_2,3,Trainer_4,Company_7,Student_55
+Nigeria,2018-12-05,Course_2,3,Trainer_4,Company_7,Student_56
+UK,2018-12-03,Course_1,5,Trainer_1,Company_2,Student_57
+Nigeria,2018-12-17,Course_2,3,Trainer_4,Company_7,Student_58
+Nigeria,2018-12-17,Course_2,3,Trainer_4,Company_7,Student_59
+Nigeria,2018-12-17,Course_2,3,Trainer_4,Company_7,Student_60
+Nigeria,2018-12-17,Course_2,3,Trainer_4,Company_7,Student_61
+Nigeria,2018-12-10,Course_2,3,Trainer_4,Company_7,Student_62
+Nigeria,2018-12-10,Course_2,3,Trainer_4,Company_7,Student_63
+Nigeria,2018-12-10,Course_2,3,Trainer_4,Company_7,Student_64
+Nigeria,2018-12-05,Course_2,3,Trainer_4,Company_7,Student_65
+Nigeria,2018-12-10,Course_2,3,Trainer_4,Company_7,Student_66
+Nigeria,2018-12-17,Course_2,3,Trainer_4,Company_7,Student_67
+Nigeria,2018-12-17,Course_2,3,Trainer_4,Company_7,Student_68
+Nigeria,2018-12-10,Course_2,3,Trainer_4,Company_7,Student_69
+Nigeria,2018-12-10,Course_2,3,Trainer_4,Company_7,Student_70
+Nigeria,2018-12-05,Course_2,3,Trainer_4,Company_7,Student_71
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_72
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_73
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_74
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_75
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_76
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_77
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_78
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_79
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_80
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_81
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_82
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_83
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_84
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_85
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_86
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_87
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_88
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_89
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_90
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_92
+In Country,2018-10-15,Course_1,5,Trainer_3,Company_8,Student_93
+In Country,2018-10-01,Course_1,5,Trainer_3,Company_8,Student_94
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_96
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_97
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_98
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_99
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_100
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_101
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_102
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_103
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_104
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_105
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_106
+In Country,2018-07-24,Course_6,4,Trainer_1,Company_9,Student_107
+In Country,2018-06-25,Course_6,4,Trainer_1,Company_9,Student_108
+In Country,2018-07-24,Course_6,4,Trainer_1,Company_9,Student_109
+UK,2018-05-29,Course_1,5,Trainer_1,Company_2,Student_110
+In Country,2018-07-24,Course_6,4,Trainer_1,Company_9,Student_111
+In Country,2018-07-24,Course_6,4,Trainer_1,Company_9,Student_112
+In Country,2018-07-24,Course_6,4,Trainer_1,Company_9,Student_115
+Nigeria,2018-05-30,Course_7,3,Trainer_6,Company_11,Student_117
+Nigeria,2018-05-30,Course_7,3,Trainer_6,Company_11,Student_118
+Nigeria,2018-06-04,Course_1,0,Trainer_4,Company_11,Student_121
+Nigeria,2018-05-30,Course_7,3,Trainer_6,Company_11,Student_122
+Nigeria,2018-05-30,Course_7,3,Trainer_6,Company_11,Student_123
+Kenya,2018-04-16,Course_1,5,Trainer_2,Company_4,Student_125
+In Country,2018-06-05,Course_9,4,Trainer_1,Company_12,Student_126
+In Country,2018-06-05,Course_9,4,Trainer_1,Company_12,Student_127
+Kenya,2018-05-14,Course_1,5,Trainer_2,Company_4,Student_129
+Kenya,2018-06-18,Course_5,3,Trainer_2,Company_4,Student_132
+Kenya,2018-06-18,Course_5,3,Trainer_2,Company_4,Student_133
+Kenya,2018-04-09,Custom,2,Trainer_2,Company_4,Student_134
+Kenya,2018-04-09,Custom,2,Trainer_2,Company_4,Student_135
+Kenya,2018-04-09,Custom,2,Trainer_2,Company_4,Student_136
+Kenya,2018-04-09,Custom,2,Trainer_2,Company_4,Student_137
+Kenya,2018-04-04,Custom,2,Trainer_2,Company_4,Student_138
+Kenya,2018-04-04,Custom,2,Trainer_2,Company_4,Student_139
+Kenya,2018-04-04,Custom,2,Trainer_2,Company_4,Student_140
+Kenya,2018-04-04,Custom,2,Trainer_2,Company_4,Student_141
+Kenya,2018-04-16,Course_1,5,Trainer_2,Company_4,Student_142
+Kenya,2018-04-16,Course_1,5,Trainer_2,Company_4,Student_143
+Kenya,2018-04-16,Course_1,5,Trainer_2,Company_4,Student_144
+Kenya,2018-05-14,Course_1,5,Trainer_2,Company_4,Student_145
+Kenya,2018-05-07,Course_1,5,Trainer_2,Company_4,Student_146
+Kenya,2018-06-18,Course_5,3,Trainer_2,Company_4,Student_147
+Kenya,2018-06-18,Course_5,3,Trainer_2,Company_4,Student_148
+Kenya,2018-05-14,Course_1,5,Trainer_2,Company_4,Student_149
+Kenya,2018-05-14,Course_1,5,Trainer_2,Company_4,Student_150
+Kenya,2018-05-07,Course_1,5,Trainer_2,Company_4,Student_151
+Kenya,2018-05-07,Course_1,5,Trainer_2,Company_4,Student_152
+Kenya,2018-05-07,Course_1,5,Trainer_2,Company_4,Student_153
+Kenya,2018-04-23,Course_2,3,Trainer_2,Company_1,Student_154
+Kenya,2018-04-23,Course_2,3,Trainer_2,Company_1,Student_155
+Kenya,2018-04-23,Course_2,3,Trainer_2,Company_1,Student_156
+Kenya,2018-04-23,Course_2,3,Trainer_2,Company_1,Student_157
+Nigeria,2018-06-04,Course_1,0,Trainer_4,Company_11,Student_158
+Nigeria,2018-06-04,Course_1,0,Trainer_4,Company_11,Student_159
+Nigeria,2018-06-04,Course_1,0,Trainer_4,Company_11,Student_160
+Nigeria,2018-05-07,Course_8,2,Trainer_7,Company_1,Student_163
+Nigeria,2018-05-07,Course_8,2,Trainer_7,Company_1,Student_164
+Nigeria,2018-05-07,Course_8,2,Trainer_7,Company_10,Student_165
+Nigeria,2018-05-07,Course_8,2,Trainer_7,Company_10,Student_166
+Nigeria,2018-05-02,Course_2,3,Trainer_4,Company_1,Student_167
+Nigeria,2018-05-02,Course_2,3,Trainer_4,Company_1,Student_168
+Nigeria,2018-05-02,Course_2,3,Trainer_4,Company_10,Student_169
+Nigeria,2018-05-02,Course_2,3,Trainer_4,Company_10,Student_170
+Nigeria,2018-04-23,Course_1,5,Trainer_4,Company_1,Student_171
+Nigeria,2018-04-23,Course_1,5,Trainer_4,Company_1,Student_172
+Nigeria,2018-04-23,Course_1,5,Trainer_4,Company_10,Student_173
+Nigeria,2018-04-23,Course_1,5,Trainer_4,Company_10,Student_174
+UK,2018-03-26,Course_1,5,Trainer_1,Company_14,Student_176
+UK,2018-03-26,Course_1,5,Trainer_1,Company_14,Student_177
+UK,2018-03-26,Course_1,5,Trainer_1,Company_14,Student_178
+UK,2018-03-26,Course_1,5,Trainer_1,Company_2,Student_179
+UK,2018-03-05,Course_1,5,Trainer_1,Company_14,Student_180
+UK,2018-03-05,Course_1,5,Trainer_1,Company_14,Student_181
+UK,2018-03-05,Course_1,5,Trainer_1,Company_14,Student_182
+UK,2018-03-05,Course_1,5,Trainer_1,Company_2,Student_183
+UK,2018-02-12,Course_1,5,Trainer_1,Company_14,Student_184
+UK,2018-02-12,Course_1,5,Trainer_1,Company_14,Student_185
+UK,2018-02-05,Course_1,5,Trainer_1,Company_5,Student_188
+UK,2018-02-05,Course_1,5,Trainer_1,Company_5,Student_189
+UK,2018-02-05,Course_1,5,Trainer_1,Company_5,Student_190
+UK,2018-02-05,Course_1,5,Trainer_1,Company_5,Student_191
+UK,2018-02-05,Course_1,5,Trainer_1,Company_5,Student_192
+UK,2018-01-29,Course_1,5,Trainer_1,Company_5,Student_193
+UK,2018-01-29,Course_1,5,Trainer_1,Company_5,Student_194
+UK,2018-01-29,Course_1,5,Trainer_1,Company_5,Student_195
+UK,2018-01-29,Course_1,5,Trainer_1,Company_5,Student_196
+UK,2018-01-29,Course_1,5,Trainer_1,Company_5,Student_197
+UK,2018-01-12,Course_2,3,Trainer_1,Company_14,Student_198
+UK,2018-01-12,Course_2,3,Trainer_1,Company_14,Student_199
+UK,2018-01-12,Course_2,3,Trainer_1,Company_6,Student_200
+UK,2018-01-12,Course_2,3,Trainer_1,Company_6,Student_201
+UK,2018-01-11,Course_8,2,Trainer_1,Company_14,Student_202
+UK,2018-01-11,Course_8,2,Trainer_1,Company_14,Student_203
+UK,2018-01-11,Course_8,2,Trainer_1,Company_6,Student_204
+UK,2018-01-11,Course_8,2,Trainer_1,Company_6,Student_205
+UK,2018-01-08,Course_9,3,Trainer_1,Company_14,Student_206
+UK,2018-01-08,Course_9,3,Trainer_1,Company_14,Student_207
+UK,2018-01-08,Course_9,3,Trainer_1,Company_6,Student_208
+UK,2018-01-08,Course_9,3,Trainer_1,Company_6,Student_209
+In Country,2018-12-03,Course_1,5,Trainer_1,Company_3,Student_210
+In Country,2018-11-28,Course_7,3,Trainer_1,Company_3,Student_211
+In Country,2018-11-28,Course_7,3,Trainer_1,Company_3,Student_212
+In Country,2018-12-03,Course_1,5,Trainer_1,Company_3,Student_213
+In Country,2018-12-03,Course_1,5,Trainer_1,Company_3,Student_214
+In Country,2018-12-03,Course_1,5,Trainer_1,Company_3,Student_215
+In Country,2018-12-03,Course_1,5,Trainer_1,Company_3,Student_216
+In Country,2018-12-03,Course_1,5,Trainer_1,Company_3,Student_217
+In Country,2018-11-28,Course_7,3,Trainer_1,Company_3,Student_218
+In Country,2018-11-28,Course_7,3,Trainer_1,Company_3,Student_219
+In Country,2018-11-28,Course_7,3,Trainer_1,Company_3,Student_220
+In Country,2018-11-28,Course_7,3,Trainer_1,Company_3,Student_221
