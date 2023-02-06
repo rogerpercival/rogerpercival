@@ -1,0 +1,48 @@
+{% extends "layout-4.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+       <div class="col-sm-4">
+        <h4>Database : {{ dbname }}</h4>
+      </div>
+     </div>
+    <div class="row">
+       <div class="col-sm-4">
+       	<form class="form-style-9" action="/cleartable" method="post">
+           <div class="form-group">
+         		<label class="function_title">CLEAR TABLE DATA</label>          
+         	</div>
+           <div class="form-group">
+         		<label table="table">Choose a table:</label>          
+         	</div>
+            <div class="form-group"> 
+         		<select name="tabletoclear">
+         		<option value="select" disabled selected=true>-- select --</option>
+         		{% for table in tablenames %}
+            		<option value="{{ table[0] }}">{{ table[0] }}</option>
+            	{% endfor %}
+          		</select>
+          	</div>
+            <button type="submit" class="btn btn-info btn-block btn-round">Clear Table</button>
+         </form>
+       </div>
+     <div class="col-sm-4"></div>
+ 		<div class="col-sm-4">
+  			<div class="help">
+  				<div class="help-title">
+  					Clear Table data from Table : {{tablename}}
+  				</div>
+  				<div class = "help-line">
+  					Select a Table from the list
+  				</div>
+   			<div class = "help-line">
+  					Click 'Clear Table'
+  				</div>
+ 			</div>
+  		</div>
+
+	</div>
+</div>
+{% endblock %}
+

@@ -85,7 +85,8 @@ def getUserName():
 	db = cs50.SQL("sqlite:///"+dbname)
 	SQLQuery = 'SELECT username FROM Users WHERE idx = '+ str(session["user_id"])
 	rows = db.execute(SQLQuery)
-	return rows[0]["username"]
+	username = rows[0]["username"]
+	return username
 	
 
 # --------------- GET COLUMN NAMES FROM DATATABLE --
@@ -259,7 +260,6 @@ def createDFTypes(df, tablename):
 				dtypedict.update({columnNames[i] : 'REAL'})
 			if columnTypes[i] == 'TEXT':
 				dtypedict.update({columnNames[i] : 'TEXT'})
-			print(dtypedict, columnTypes, columnNames)
 		return dtypedict
 		
 	except Exception as e:
@@ -329,8 +329,6 @@ def writeDFReg_to_SQL(level, df: pd.DataFrame, tablename):
 # requires dataframe and table name as input
 def generate_table(level, tablename):
 
-	print(f'***DEBUG : generate_table {level} {tablename}')
-
 	layout = getLayout(level)
 	try:
 		df = createDF_from_table(level, tablename)
@@ -345,33 +343,8 @@ def generate_table(level, tablename):
 		return records
 	except Exception as e:
 		flash(e)
-		return render_template(layout)
-		
-		
+		return render_template(layout)	
 
-# --------------- MAKE HMTL ------------------			
-def makehtml(SQLQuery):
-	# Generate panda dataframe from SQL table
-	df = pd.DataFrame(SQLQuery)
-	
-	# Process dataframe and generate html dynamically for table
-	process_dataframe(df, tablename)
-
-	return
-	
-	
-# --------------- GET LEVEL ------------------
-#def getLevel():
-#	
-#	SQLStr = 'SELECT level FROM Users where idx = ' + str(session['user_id'])
-#	db = cs50.SQL("sqlite:///"+dbname)	
-#	row = db.execute(SQLStr)
-#	level = row[0]['level']
-#		
-#	return level
-	
-# --------------- SHOW STUDENT TABLE ------------------
-# Display database table Students
 @app.route('/showstudents')
 def showstudents():
 	
@@ -543,7 +516,7 @@ def process_dataframe(dataframe: pd.DataFrame, tablename):
 
 	open("templates/table.html", "w").write(html)
 
-	return html
+	return
 
 
 
@@ -594,6 +567,10 @@ def deletefield():
 		conn=create_connection(level, dbname)
 		df = createDF_from_table(level,tablename)
 		
+		if tablename == 'Users':
+			flash("You can't delete any Column in the Users table")
+			return redirect('/listfields')
+			
 		index_column='idx'
 		df = df.drop([index_column, columnname], axis=1)
 			
@@ -664,7 +641,7 @@ def addfield():
 		
 			# Add new column to datatable with data according to fieldtypes		
 			if fieldtype == 'TEXT':
-				df.loc[:,fieldname] = 'None'
+				df.loc[:,fieldname] = 'NaN'
 			if fieldtype == 'INTEGER':
 				df.loc[:,fieldname] = 0
 			if fieldtype == 'REAL':
@@ -830,6 +807,7 @@ def getfields2():
 	
 	username = getUserName()
 	level = getLevel()
+	layout = getLayout(level)
 	fieldtypes = ['TEXT', 'INTEGER', 'REAL']
 
 	if request.method == 'GET':	
@@ -843,15 +821,19 @@ def getfields2():
 
 		try:
 			tablename = request.form.get("table")
+			SQLQuery = 'SELECT count (*) FROM ' + tablename
+			conn = create_connection(level, dbname)
+			count = conn.execute(SQLQuery).fetchone()
+			count = int(count[0])
+			if count == 0:
+				flash("You can't add a column to an empty table")
+				return redirect("/listfields")
 			df = createDF_from_table(level, tablename)
 
 		except Exception as e:
 			flash(e)
 		
-		finally:
-			flash('Add column')
-			#return redirect("/addfield")
-			return render_template("addcolumn.html", fieldtypes=fieldtypes, tablename=tablename, username=username)
+		return render_template("addcolumn.html", fieldtypes=fieldtypes, tablename=tablename, username=username)
 
 	
 
@@ -1167,12 +1149,6 @@ def importCSV():
 
 		try:
 			df = createDF_from_csv(csvfilename)
-			
-			print(df.head(5))
-			print(df.dtypes)
-		   
-		   
-		   
 		   
 			# Replace spaces in column names with underscore
 			df.columns = df.columns.str.replace(' ', '_')
@@ -1195,7 +1171,7 @@ def importCSV():
 			# Get data for selected table
 			#db = cs50.SQL("sqlite:///"+dbname)
 			SQLQuery = 'SELECT * FROM ' + tablename
-			#print(SQLQuery)
+
 			records = db.execute(SQLQuery)
 		
 			msg = str(len(df)) + ' records, ' + str(df.shape[1] - 1) + ' fields imported into table "' + tablename + '" successfully'

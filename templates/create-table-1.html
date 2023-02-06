@@ -1,0 +1,52 @@
+{% extends "layout-4.html" %}
+{% block title %} <title>Create table</title>{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h4>Database : {{ dbname }}</h4>
+      </div>
+    </div>
+    <div class="row">
+       <div class="col-sm-4">
+			<form class="form-style-9" action="/createtable" method="post">
+             <div class="form-group">
+         		<label class="function_title">CREATE TABLE</label>          
+         	</div>
+        	<div class="form-group">
+         		<label table="table">Table name:</label>          
+         	</div>
+            <div class="form-group">
+         		<input type="text" id="tablename" name="tablename" required placeholder="Enter table name">       
+         	</div>
+            <div class="form-group">
+         		<label table="table">Number of Columns:</label>          
+            </div>
+            <div class="form-group">
+         		<input type="number" id="fields" name="fields" min=1 max=9 required placeholder="1">    
+            </div>
+            <button type="submit" class="btn btn-info btn-block btn-round">Create table</button>
+         </form> 
+		</div>
+		      <div class="col-sm-4">
+      </div>
+ 		<div class="col-sm-4">
+  			<div class="help">
+  				<div class="help-title">
+  					Create Table
+  				</div>
+  				<div class = "help-line">
+  					Enter a Table name (no spaces)
+  				</div>
+  				<div class = "help-line">
+  					Select a number of Columns (1-9)
+  				</div>
+  				<div class = "help-line">
+  					Click 'Create Table'
+  				</div>
+ 			</div>
+  		</div>
+	</div>
+</div>
+{% endblock %}
+

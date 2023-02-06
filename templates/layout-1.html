@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% block title %}
+
+{% endblock %}
+
+
+	<!-- css  -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+     
+  	<!-- js  -->   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+   <link rel="stylesheet" href="/static/css/style.css">
+   <link rel="stylesheet" href="/static/css/nav-bar.css">
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+</script>
+
+
+<style>
+	.cbnljumbotron {padding: 1rem 1rem; margin-bottom: 2rem; background-color: #e9ecef; border-radius: 0.3rem;}
+	.top-buffer { margin-top:20px;}
+	.table-condensed{font-size: 14px;}
+	.large-text {font-size: 18px; background-color: #e9ecef; }
+
+</style>
+</head>
+
+<body>
+ 
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+    		<img class = "logo" src="static/icons/logo.png" alt="ICE">
+  		</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+		<li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+ <div class="container-fluid">
+ 	<div class= "row">
+ 		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+ 			{% if get_flashed_messages() %}
+				<div class="flashes large-text " role="alert">
+					{{ get_flashed_messages() | join(" ") }}
+				</div>
+			{% endif %}	
+		</div>	
+ 	</div>
+ </div>				
+{% block content %}
+
+{% endblock %}
+
+{% block modal %}
+
+{% endblock %}
+
+</body>
+</html>

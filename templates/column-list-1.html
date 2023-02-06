@@ -1,0 +1,56 @@
+{% extends "layout-4.html" %}
+
+
+{% block content %}
+<!-- Student table to be inserted -->
+<div class="container">
+    <div class="row">
+       <div class="col-sm-4">
+        <h4>Database : {{ dbname }}</h4>
+      </div>
+      <div class="col-sm-4">
+        <h4>Table    : {{ tablename }}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <form class="form-style-9" action="/listfields" method="post">
+				<input type="text" hidden value={{ tablename }}>
+          <div class="form-group">
+         		<label class="function_title">SHOW COLUMNS</label>          
+         	</div>
+				<div class="form-group">
+					<label table="table">Choose a table:</label>	
+				</div>
+ 				<div class="form-group">      
+ 					<select name="table">
+ 						<option disabled selected=true value=select>-- select --</option>
+              		{% for table in tablenames %}
+                		<option value="{{ table[0] }}">{{ table[0] }}</option>
+              		{% endfor %}
+          		</select>
+				</div>
+				<div class="form-group"> 
+          		<button type="submit" class="btn btn-info btn-block btn-round">List Columns</button>
+          	</div>   
+        </form>  
+       </div>
+       <div class="col-sm-4">
+       </div>
+       <div class="col-sm-4">
+  			<div class="help">
+  				<div class="help-title">
+  					Show Columns	
+  				</div>
+  				<div class = "help-line">
+  					Choose a Table from the list
+  				</div>
+  				<div class = "help-line">
+  					Click 'List Columns' to display Table columns
+  				</div>
+  			</div>
+  		</div>
+
+	</div>
+</div>
+{% endblock %}

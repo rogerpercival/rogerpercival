@@ -1,6 +1,10 @@
-# TRAINING TRACKER
+# TrackMyTraining
+#### Video Demo:  <URL HERE>
+#### Description: see below
 
-## CS50 Final project by - Roger S. Percival January 2023
+
+
+## CS50 Final project by - Roger S. Percival February 2023
 
 ### Rationale for this project
 
@@ -19,10 +23,6 @@ As development progressed, I decided to add the capability to add more tables an
 
 Throughout development of this application, online resource was extensively used, including -
 - stackoverfow
-
-#### Home page
-<img src="static/images/homepage.png" width="20%"/>
-
 
 ### Project Features
 
@@ -56,100 +56,203 @@ Throughout development of this application, online resource was extensively used
 - sqlite3
 - werkzeug.security
 
-****
 
-
-### Python Functions
+### Summary of Python Functions
 
 #### addfield
-- Add a new column to the currently selected table
+- Creates a pandas dataframe ('*df*') from the selected table and modifies it by adding new 
+Column name and an appropriate value (TEXT - "None", INTEGER - 0 , REAL - 0.0). A call is made to '*writeDF_to_SQL*' 
+to write the dataframe to the database
+- Returns 'render_template' with '*table.html*'
 
 #### addrecord
-- Add a new record to the currently selected table
-
+- Adds a new record to the currently selected table
+- Calls '*createSQLColumnStr*' and '*createSQLValueStr*' to be used in SQL **INSERT** instruction
 - Note that if the selected table is 'Users' a record cannot be added - Use 'Register to add a new user
+- Returns 'render_template' with '*table.html*'
 
 #### cleartable
-- Clear all records from the currently selected table
-
+- Clears all records from the currently selected table
 - Note that if the selected table is 'Users' this function is disabled
 
 #### create_connection
 - Creates a connection to the database (cs50-project.db)
+- Returns **conn**
 
 #### createDF_from_csv
+- Creates a pandas dataframe from the chosen CSV file. All CSV files are stored in the directory '**/static/csv**'.
+It should be noted that if an indexing column is present in the CSV file, it will need to be removed before import, otherwise an exception will occur.
+During the import, the pandas module will attempt to identify the datatype for each column. 
+Once the import has been completed, a new table with the specified name will be stored in the database, along with imported data
+- Returns *df*
+ 
 #### createDF_from_table_fields
-#### createDF_from_table
-#### createDFTypes
-#### createSQLColumnStr
-#### createSQLUpdateStr
-#### createSQLValueStr
-#### createtable
-#### deletefield
-#### deleterecord
-- Delete the currently selected record and update the database
+- Creates a pandas dataframe from the columns in the selected table which can then later be used to either add or drop a column from the database table
+- Returns *df*
 
+#### createDF_from_table
+- Creates a pandas dataframe from the selected table which can then later be used to either add, edit or delete a record from the table
+- Returns *df*
+
+#### createDFTypes
+- Constructs a dictionary from the column names and types of the provided table. 
+  This is **essential** to ensue that the appropriate datatypes (*by default the datatype is text*) will be written back to the database
+- Returns *dtypedict* 
+
+#### createSQLColumnStr
+- Creates the 'Column part' of an SQLQuery when adding a new record using INSERT
+- *SQLQuery = 'INSERT INTO '+ tablename + **SQLColumnStr** + ' VALUES' + SQLValueStr* 
+- Returns *SQLColumnStr*
+
+#### createSQLUpdateStr
+- Creates the SQLQuery when updating an record using UPDATE. 
+Note that idx points to the record to be updated following an edit
+- *SQLQuery = 'UPDATE '+ tablename + ' SET ' + **SQLUpdateStr** + ' WHERE "idx" = ' + str(idx)*
+- Returns *SQLUpdateStr*
+
+#### createSQLValueStr
+- Creates the 'Value part' of an SQLQuery when adding a new record using INSERT
+- *SQLQuery = 'INSERT INTO '+ tablename + SQLColumnStr + ' VALUES' + **SQLValueStr***
+- Returns *SQLValueStr*
+
+#### createtable
+- GET : Displays page for user to enter new table name and number of fields
+- POST : Creates a pandas dataframe, processes the html code for '*table.html*' and uses SQL SELECT to populate displayed table
+- Returns 'render_template' with '*create-table-1.html*' with GET method
+- Returns 'render_template' with '*create-table-2*' with POST method
+- Note : Replaces 'spaces' and '-' with '_' in supplied table name
+
+#### deletefield
+- Creates a pandas dataframe ('*df*') from selected table, drop the appropriate column (referenced by '*idx*') and call '*writeDF_to_SQL*' to write modified dataframe back to the database
 - Note that if the selected table is 'Users' the 'admin' user cannot be deleted
 
-#### deletetable
-- Delete the currently selected table from the database
+#### deleterecord
+- Deletes the currently selected record using SQLQuery '**DELETE**' to update the database
+- Note : If the selected table is 'Users' the 'admin' user cannot be deleted
 
-- Note that if the selected table is 'Users' this function is disabled
+#### deletetable
+- Deletes the currently selected table from the database
+- Note : If the selected table is 'Users' this function is disabled
 
 #### editrecord
-- Edit an existing record in a table and update the database
-
+- Edits an existing record in a table and update the database
+- Returns 'render_template' with '*table.html*'
 - Note that if the selected table is 'Users' only the level can be changed (1-3)
 
 #### generate_table
+- Creates a pandas data frame from the selected table which is then used to dynamically create **table.html**
+by calling *process_dataframe*. 
+An SQL SELECT query is then used to get all relevant records from the database which will be used to populate (when displayed) **table.html**
+- Returns *records*
+
 #### getColumnNames
+- Creates a pandas dataframe (df) of the specified table and creates a list of column names using *df.columns*
+- Returns *columnNames*
+
 #### getColumnTypes
+- Uses SQLite *PRAGMA* to get the column types of the specified table which are then added to a list
+- Returns *columnTypes*
+
 #### getfields
+- Uses SQLite *PRAGMA* to get the column types of the specified table to be used with '*addrecord*'
+- Returns 'render_template' with '*addrecord.html*'
+
 #### getfields2
+- Specifies 3 datatypes to be used when new column will be created from '*addcolumn.html*' 
+- Returns 'render_template' with '*addcolumn.html*'
+ 
 #### getfields3
+- Gets column names and values for record referenced by'*idx*' from specified table in database 
+with results to be displayed in '*editrecord.html*'
+- Returns 'render_template' with '*editrecord.html*'
+
 #### getLayout
 - Determines which layout will be used based upon level of logged in user
-	- level 1 = layout-2.html
-
-	- level 2 = layout-3.html
+- Returns *level*
+- Note : 3 layouts;  layout-2.html (level 1 user), layout-3.html (level 2 user), layout-4.html (level 3 user)
 	
-	- level 3 = layout-4.html
-	
-
 #### getLevel
-- Queries database to obtain user name, referenced by 'idx'
- 	- level 1, can only view Student and Course tables
- 	
- 	<img src="static/images/menu1a.png" width="100">
+- Queries database to obtain level of current user based on *session['user_id']*
+- Returns *level*
+	- level 1, can only view Student and Course tables
 	- level 2, can access all tables and can add, edit and delete records
-	
-	<img src="static/images/menu2a.png" width="100">
-	- level 3, full access to database, can create, edit and delete tables
-	
-	<img src="static/images/menu3a.png" width="100">
+	- level 3, full access to database, can create, import (from CSV files), edit and delete tables
 
 #### getUserName
+- Queries database to obtain user name of current user based on *session['user_id']*
+- Returns *username*
+
 #### home
+- Home page, **index.html**.
+
 #### importCSV
+- GET : Gets a list of available CSV files (stored in '*static/csv*')
+- POST : Creates a pandas dataframe (*df*) by calling *createDF_from_csv*, then calls *writeDF_to_SQL2* to write the dataframe to the database.
+A call to *generate_table* then generates the appropriate html code for table.html
+- Returns 'render_template' with '*getcsvfile.html*' with GET method
+- Returns 'render_template' with '*table.html*' with POST method
+
 #### listfields
+- GET : Gets a list of available tables
+- POST : Creates a pandas dataframe, processes the html code for '*table.html*' and uses SQL SELECT to populate displayed table
+- Returns 'render_template' with '*column-list-1.html*' with GET method
+- Returns 'render_template' with '*table.html*' with POST method
+
 #### listtables
+- GET : Gets a list of available tables
+- POST : Creates a pandas dataframe, processes the html code for '*table.html*' and uses SQL SELECT to populate displayed table
+- Returns 'render_template' with either '*table-list-1.html*' (level 2) or '*table-list-2.html*' (level 3) with GET method
+- Returns 'render_template' with '*column-list-2.html*' with POST method
+
 #### login
+- Validates user name/password and ensures user has been registered
+- Returns 'render_template' with *layout-'X'.html*, based on user level (X = user level + 1) 
+
 #### logout
-#### makehtml
+- Clears session
+- Returns 'render_template' with *login.html*
+
 #### maketable
+- POST : Gets table name, number of fields and field names from user. 
+An SQL query string is constructed from this information and a new table is created if it doesn't already exist
+- Returns 'render_template' with *create-table-2.html* with GET method
+- Returns 'render_template' with *table.html* with POST method
+- NOTE : This function does **NOT** create a unique index so a pandas datframe is create from the table and 
+rewritten to the database with unique indeces
+
 #### process_dataframe
+- Dynamically creates the html code for *table.html* (different for each table)
+- A pandas dataframe (df) and tablename are used as inputs for creation
+
 #### register
+- This function receives username, password and password confirmation from user.
+These are validated and if the user is not already registered a hash of the password will be generated. 
+A pandas dataframe is generated, the new user is added (with a default of level 1) and the dataframe is written back to the database.
+- Returns 'render_template' with *login.html* 
+
+
 #### showcourses
-- Display the pre-defined Course table (uses datatables and some jquery)
+- Displays the pre-defined Course table (uses datatables and some jquery)
+- Returns 'render_template' with *table-0.html* (level 1) or *table.html* (level 2,3)
 
 #### showstudents
 - Display the pre-defined Student table (uses datatables and some jquery)
+- Returns 'render_template' with *table-0.html* (level 1) or *table.html* (level 2,3)
 
 #### writeDFReg_to_SQL
-#### writeDF_to_SQL2
+- Used in specific case of Registration when new user needs to be added to **Users** table, Calls *createDFTypes* to create *dtype* dictionary
+- Writes the provided dataframe to the **Users** table in the database
+- Returns *df*
+
 #### writeDF_to_SQL
- 
-****
+- Used for existing table where datatypes already exist (calls *createDFTypes* to create *dtype* dictionary)
+- Writes the provided dataframe to the specified table in the database with dtypes correctly specified
+- Returns *df*
+
+#### writeDF_to_SQL2
+- Used for imported table where datatypes can be implied
+- Writes the provided dataframe to the specified table in the database
+- Returns *df* 
 
 
 ### HTML pages
@@ -250,18 +353,24 @@ Throughout development of this application, online resource was extensively used
 	- Provides a drop-down list to allow user to select a table to display 
 
 
-
 ## Screenshots
-- Login and Register page
+
+#### Home page
+| Home Page |	
+| :-------: | 
+|<img src="static/images/homepage.png" width="70%"/>|
+
+#### Login and Register pages
 
 | Login | Register |
-| :---: | :---: |
-| <img src="static/images/Login.png" width="100">  | <img src="static/images/Register.png" width="100">|
+| :---: | :------: |
+| <img src="static/images/login.png" width="70%">  | <img src="static/images/register.png" width="70%">|
+
+#### Table pages
+| Courses | Organisations |
+| :-----: | :-----------: |
+|<img src="static/images/table1.png" width="80%"/> | <img src="static/images/table2.png" width="80%"/>|
 
 ### Suggested future improvements
 
-Although this application is functional (indeed suffered from 'feature creep' there are a number of improvemens which could be made
-
-==================================================================================================
-
-
+TBD

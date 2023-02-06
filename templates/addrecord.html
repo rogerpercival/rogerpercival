@@ -1,0 +1,58 @@
+{% extends "layout-3.html" %}
+{% block title %} <title>Add Record</title>{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row">
+       <div class="col-sm-4">
+        <h4>Database : {{ dbname }}</h4>
+      </div>
+      <div class="col-sm-4">
+        <h4>Table    : {{ tablename }}</h4>
+      </div>
+    </div>
+  	<div class="row">   
+  		<div class="col-sm-4">    
+ 			<form class="form-style-9" action="/addrecord" method="post">
+          <div class="form-group">
+         		<label class="function_title">ADD RECORD</label>          
+         	</div>
+            <div class="form-group">
+              <input type=text hidden name="table" value = "{{ tablename }}">
+            </div>
+            {% for result in results %}
+            	<div class="form-group">
+            		<label name="name">{{ result.1 }}:</label>
+               	<input type=text hidden name="fieldtype" value = "{{ result.2 }}">
+               	{% if result.2 == "INTEGER" %}
+ 							<input type="number" min="0" name="{{ result.1 }}" placeholder="{{ result.1 }}" value="1"></td>	
+               	{% endif %}
+               	{% if result.2 == "REAL" %}
+ 							<input type="number" min="0" name="{{ result.1 }}" placeholder="{{ result.1 }}" value="1"></td>	
+               	{% endif %}
+              	   {% if result.2 == "TEXT" %}
+ 							<input type="text" name="{{ result.1 }}" placeholder="{{ result.1 }}" value="None"></td>	
+               	{% endif %}
+            	</div>
+				{% endfor %}
+            <button type="submit" class="btn btn-info btn-block btn-round">Submit Record</button>
+           </form>
+		</div>
+		<div class="col-sm-4"></div>
+ 		<div class="col-sm-4">
+  			<div class="help">
+  				<div class="help-title">
+  					Add Record to table : {{tablename}}
+  				</div>
+  				<div class = "help-line">
+  					Enter values as appropriate
+  				</div>
+  				<div class = "help-line">
+  					Click 'Submit Record'
+  				</div>
+  			</div>
+  		</div>
+	</div>
+</div>
+
+{% endblock %}
+
