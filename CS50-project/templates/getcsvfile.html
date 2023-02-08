@@ -1,0 +1,65 @@
+{% extends "layout-4.html" %}
+
+{% block content %}
+
+<div class="container">
+   <div class="row">
+      <div class="col-sm-4">
+        <h4>Database : {{ dbname }}</h4>
+      </div>
+    </div>
+        <div class="row">
+      	<div class="col-sm-4">   
+      	<form class="form-style-9" action="/importCSV", method="POST">
+             <div class="form-group">
+         		<label class="function_title">IMPORT FROM CSV FILE</label>          
+         	</div>
+        		<div class="form-group">
+					<label table="csv">Choose a CSV file:</label>
+				</div>
+          	<div class="form-group">
+					<select name="csv">
+              		{% for csvfile in csvfiles %}
+                		<option value="{{ csvfile }}">{{ csvfile }}</option>
+              		{% endfor %}
+          		</select>
+          	</div>
+        		<div class="form-group">
+					<label table="csv">Table name:</label>
+				</div>
+       		<div class="form-group">
+  				 	<input type="text" required id="table" name="table" placeholder="Table Name">
+  				</div>
+             <button type="submit" class="btn btn-info btn-block btn-round">Import CSV data</button>
+			</form>       
+		</div>
+		<div class="col-sm-4">
+  			<img class="picture" src="static/images/csv_to_table.png"  alt="CSV to table">
+  		</div>
+  		<div class="col-sm-4"></div>
+  			<div class="col-sm-4">
+  			<div class="help">
+  				<div class="help-title">
+  					Import from CSV file
+  				</div>
+  				<div class = "help-line">
+  					Select a CSV file from the list
+  				</div>
+  				<div class = "help-line">
+  					Enter a name for the new Table (no spaces)
+  				</div>
+  				<div class = "help-line">
+  					 Click 'Import CSV data' 
+  				</div>
+  				<div class = "help-note">
+  					 CSV files are in stored in '/static/csv' 
+  				</div>
+ 				<div class = "help-note">
+  					 If error occurs validate CSV and try to import again 
+  				</div>
+				</div>
+  			</div>
+  		</div>
+	</div>
+</div>
+{% endblock %}

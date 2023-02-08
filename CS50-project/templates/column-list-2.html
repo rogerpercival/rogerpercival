@@ -1,0 +1,100 @@
+{% extends "layout-4.html" %}
+
+
+{% block content %}
+<!-- Student table to be inserted -->
+<div class="container">
+    <div class="row">
+       <div class="col-sm-4">
+        <h4>Database : {{ dbname }}</h4>
+      </div>
+      <div class="col-sm-4">
+        <h4>Table    : {{ tablename }}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <form class="form-style-9" action="/listfields" method="post">
+				<input type="text" hidden value={{ tablename }}>
+          	<div class="form-group">
+         		<label class="function_title">SHOW COLUMNS</label>          
+         	</div>
+				<div class="form-group">
+					<label table="table">Choose a table:</label>	
+				</div>
+ 				<div class="form-group">      
+ 					<select name="table">
+ 						<option disabled selected=true value=select>-- select --</option>
+              		{% for table in tablenames %}
+                		<option value="{{ table[0] }}">{{ table[0] }}</option>
+              		{% endfor %}
+          		</select>
+				</div>
+				<div class="form-group"> 
+          		<button type="submit" class="btn btn-info btn-block btn-round">List Columns</button>
+          	</div>   
+        </form>  
+       </div>
+      <div class="col-sm-4">
+ 			<table id="table" class="table-striped table-bordered table-condensed nowrap" style="width: 100%">
+            <thead style="background-color: #0271c9; color: white;">
+                <tr>
+	           			<th class="action-width"></th>	           			
+	           			<th>Column</th>	           			
+	           			<th>Type</th>
+                  </tr>
+            </thead>
+            <tbody>
+            <tr>
+             	{% for column in column_names %}
+               	<td>
+                		<form action="/deletefield" method="post">
+                      <input name="table" type="hidden" value="{{ tablename }}">
+                			<input name="columnname" type="hidden" value="{{ column.1 }}">
+                  		<button class="delete-button" type="submit" title="delete"><span>Delete</span></button>
+                  	</form>
+    					</td>         
+ 						<td> {{ column.1 }}  </td>
+ 						<td> {{ column.2 }}  </td>
+            </tr>
+            	{% endfor %}
+            </tbody>
+            <form action="/getfields2" method="post">
+             	<input name="table" type="hidden" value="{{ tablename }}">
+            	<button class="add-button" type="submit" title="add"><span>Add new Column</span>
+         	</form>
+        </table>
+ 			  </div>
+ 			      <div class="col-sm-4">
+      </div>
+ 		<div class="col-sm-4">
+  			<div class="help">
+  				<div class="help-title">
+  					Show Columns
+  				</div>
+  				<div class = "help-line">
+  					Column names and types are displayed
+  				</div>
+  				<div class = "help-line">
+  					Add a new Column by clicking
+  					<button class="add-button"title="Add"></button>
+  				</div>
+  				<div class = "help-line">
+  					Delete a Column by clicking
+  					<button class="delete-button"title="delete"></button>
+  				</div>
+ 				<div class = "help-note">
+  					 	You can't add any Columns to an empty Table
+  				</div>
+ 				{% if tablename == "Users" %}
+					<div class = "help-note">
+  					 	You can't delete any Columns in this Table
+  					</div>
+  				{% endif %}
+
+
+  			</div>
+  		</div>  
+	</div>
+</div>
+{% endblock %}

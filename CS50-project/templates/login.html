@@ -1,0 +1,72 @@
+{% extends "layout-1.html" %}
+
+{% block content %}
+
+<div id="form">
+  <div class="container">
+    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2">
+      <div id="userform">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+          <li class="active"><a href="#login"  role="tab" data-toggle="tab">Login</a></li>
+          <li><a href="#register"  role="tab" data-toggle="tab">Register</a></li>
+        </ul>
+        <div class="tab-content">
+         <div class="tab-pane fade  active in" id="login">
+            <h2 class="text-uppercase text-center"> Log in</h2>
+            <form class="form-style-9" id="login", action="/login" method="post">
+              <div class="form-group">
+                <label>User Name<span class="req">*</span> </label>
+                <input type="text" class="form-control" id="lusername" name="lusername" required data-validation-required-message="Please enter your user name" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <label>Password<span class="req">*</span> </label>
+                <input type="password" class="form-control" id="lpassword" name="lpassword" required data-validation-required-message="Please enter your password" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="mrgn-30-top">
+                <button type="submit" class="btn btn-larger btn-block"/>
+                Log in
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade in" id="register">
+            <h2 class="text-uppercase text-center">Register</h2>
+            <form class="form-style-9" id="register", action="/register" method="post">
+              <div class="form-group">
+                <label>User Name<span class="req">*</span> </label>
+                <input type="text" class="form-control" id="rusername" name="rusername" required data-validation-required-message="Please enter your user name" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <label>Password<span class="req">*</span> </label>
+                <input type="password" class="form-control" id="rpassword" name="rpassword" required data-validation-required-message="Please enter your password" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <label>Confirm Password<span class="req">*</span> </label>
+                <input type="password" class="form-control" id="rconfirmpassword" name="rconfirmpassword" required data-validation-required-message="Please confirm your password" autocomplete="off">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="mrgn-30-top">
+                <button type="submit" class="btn btn-larger btn-block"/>
+                Register
+                </button>
+              </div>
+            </form>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.container --> 
+</div>
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+<!-- partial -->
+  <script  src="static/script.js"></script>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "layout-4.html" %}
+{% block title %} <title>Create table</title>{% endblock %}
+{% block content %}
+<div class="container">
+   <div class="row">
+      <div class="col-sm-4">
+        <h4>Database : {{ dbname }}</h4>
+      </div>
+     </div>
+    <div class="row">
+        <div class="col-sm-4"> 
+        <form class="form-style-9" action="/maketable" method="post">
+            <div class="form-group">
+         		<label class="function_title">CREATE TABLE</label>          
+         	</div>
+        		<div class="form-group">
+        			<input type="text" hidden name="tablename" value="{{tablename}}">
+					<input type="text" hidden name="field" value="{{field}}">
+         		<label>Column name</label>          
+         	</div>
+         	{% for n in range(field) %}
+            	<div class="form-group">
+            		<label>{{loop.index }}</label>
+						<input type="text" id="field{{loop.index0 }}" name="field{{loop.index0 }}" required placeholder="field{{loop.index0 }}">
+					</div>					
+    			{% endfor %}
+            <button type="submit" class="btn btn-info btn-block btn-round">Add Columns</button>
+         </form>
+       </div>
+	   	<div class="col-sm-4"></div>
+ 		<div class="col-sm-4">
+  			<div class="help">
+  				<div class="help-title">
+  					Create table : {{tablename}}
+  				</div>
+  				<div class = "help-line">
+  					Enter Column names for each Column (no spaces)
+  				</div>
+  				<div class = "help-line">
+  					Click 'Add Columns'
+  				</div>
+  				<div class = "help-note">
+  					 Column names MUST be unique
+  				</div>
+ 				<div class = "help-note">
+  					 If the Table already exists it will NOT be overwritten
+  				</div>
+   		</div>
+  		</div>
+	</div>  
+</div>
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{% extends "layout-4.html" %}{% block title %} <title>Courses</title>{% endblock %}   {% block content %}
+							<div class="container">
+      					<div class="row">
+        					<div class="col-sm-4">
+   					<h4>Database : {{ dbname }}</h4></div><div class="col-sm-4"><h4>Table : {{ tablename }}</h4></div>
+      					</div>
+     					 	<div class="row">
+							<div class="col-sm-12">
+							<form name="add" action="/getfields" method="post">
+							<input name="table" hidden value="Courses">
+							<button class="add-button" type="submit" title="add"><span>Add record</span></button>             	
+							</form>   						
+ 
+							<table id="mytable" class="table table-striped table-bordered table-condensed nowrap" style="width: 100%">
+							<thead style="background-color: #0271c9; color: white;">
+                  	<tr>
+ 							<th class="action-width"></th><th class="action-width"></th><th>centre</th><th>date</th><th>course</th><th>duration</th><th>trainer</th><th>company</th><th>student</th></thead><tbody>{% for record in records %}
+                		<tr>
+                		<td>
+                 		<form  name="delete" action="/deleterecord" method="post">
+  							<input name="table" type="hidden"
+   					placeholder={{ tablename }} value={{ tablename }}><input name="idx" hidden value=" {{ record.idx }}"><button class="delete-button" type="submit" title="delete"><span>Delete</span></button></form></td>
+                		<td>
+                 		<form name="edit" action="/getfields3" method="post">
+  							<input name="table" type="hidden"
+   					placeholder={{ tablename }} value={{ tablename }}><input name="idx" hidden value=" {{ record.idx }}"><button class="edit-button" type="submit" title="edit"><span>Edit</span></button></form></td><td> {{ record.centre }} </td><td> {{ record.date }} </td><td> {{ record.course }} </td><td> {{ record.duration }} </td><td> {{ record.trainer }} </td><td> {{ record.company }} </td><td> {{ record.student }} </td>
+							</tr>
+   					{% endfor %}
+                		</tbody>
+        					</table>
+							</div>
+							</div>
+							</div>
+						{% endblock %}
